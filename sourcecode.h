@@ -1,11 +1,3 @@
-/*!
- * \file sourcecode.h
- * \brief Header containing the declaration of the SourceCode class.
- * \author Hadrien Decoudras
- * \date 23-06-2016
- * \version 0.1
- */
-
 /**
  *
  * This file is part of Porgy (http://tulip.labri.fr/TulipDrupal/?q=porgy)
@@ -31,13 +23,6 @@
 
 #include <QString>
 
-/*!
- * \class SourceCode
- * \brief The SourceCode class contains the name of a source code and its content.
- *        It is designed to be used with the CodeEditorView widget. Especially with
- *        the SourceCodeModel and the CodeEditorListView. This component is part of
- *        the underlying Model of the CodeEditorView widget.
- */
 class SourceCode
 {
 public:
