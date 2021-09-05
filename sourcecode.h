@@ -48,7 +48,7 @@ public:
 
     inline void setCode(const QString& sourceCode)
     {
-        code = code;
+        code = sourceCode;
     }
 
     inline bool isNameAndCodeNotEmpty() const
