@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>styles/code-editor/toolbar/toolbar.qss</file>
+        <file>styles/code-editor/toolbar/items/toolbaritems.qss</file>
+        <file>styles/code-editor/splitter/splitter.qss</file>
+        <file>styles/code-editor/listview/items/listviewitems.qss</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>syntax/code-editor/porgy-script.xsd</file>
+        <file>syntax/code-editor/porgy-script.xml</file>
+    </qresource>
+</RCC>
