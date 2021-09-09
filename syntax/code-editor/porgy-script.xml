@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="porgy-script.xsd">
+
+<!--///////////////////////////////////////////////////////////////////////////////////////-->
+<!--///////////////////////////////////////////////////////////////////////////////////////-->
+<!--// This file is part of Porgy (http://tulip.labri.fr/TulipDrupal/?q=porgy)           //-->
+<!--//                                                                                   //-->
+<!--// from LaBRI, University of Bordeaux, Inria and King's College London               //-->
+<!--//                                                                                   //-->
+<!--// Porgy is free software;  you can redistribute it and/or modify                    //-->
+<!--// it under the terms of the GNU Lesser General Public License                       //-->
+<!--// as published by the Free Software Foundation, either version 3                    //-->
+<!--// of the License, or (at your option) any later version.                            //-->
+<!--//                                                                                   //-->
+<!--// Porgy is distributed in the hope that it will be useful,                          //-->
+<!--// but WITHOUT ANY WARRANTY; without even the implied warranty of                    //-->
+<!--// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.                              //-->
+<!--// See the GNU Lesser General Public License for more details.                       //-->
+<!--//                                                                                   //-->
+<!--// You should have received a copy of the GNU Lesser General Public License          //-->
+<!--// along with this Porgy.  If not, see <http://www.gnu.org/licenses/>.               //-->
+<!--///////////////////////////////////////////////////////////////////////////////////////-->
+<!--///////////////////////////////////////////////////////////////////////////////////////-->
+
+    <name>Porgy Scripting Language 0.1</name>
+    <attributes>
+        <instructions color="4697415" style="bold">
+            <instruction>\bif\b</instruction>
+            <instruction>\bthen\b</instruction>
+            <instruction>\belse\b</instruction>
+            <instruction>\borelse\b</instruction>
+            <instruction>\brepeat\b</instruction>
+            <instruction>\bwhile\b</instruction>
+            <instruction>\bdo\b</instruction>
+	    <instruction>\btry\b</instruction>
+	    <instruction>\bnot\b</instruction>
+        </instructions>
+        
+        <functions color="16737894" style="italic">
+            <function value="\ball\b">Description needed</function>
+            <function value="\bone\b">Description needed</function>
+            <function value="\bcrtGraph\b">Description needed</function>
+            <function value="\bcrtPos\b">Description needed</function>
+            <function value="\bcrtBan\b">Description needed</function>
+            <function value="\bproperty\b">Description needed</function>
+            <function value="\bngb\b">Description needed</function>
+            <function value="\bsetPos\b">Description needed</function>
+            <function value="\bsetBan\b">Description needed</function>
+            <function value="\bupdate\b">Description needed</function>
+            <function value="\bisEmpty\b">Description needed</function>
+            <function value="\bmatch\b">Description needed</function>
+	    <function value="\bnode\b">Description needed</function>
+	    <function value="\bedge\b">Description needed</function>
+	    <function value="\bport\b">Description needed</function>
+	    <function value="\bppick\b">Description needed</function>
+	    <function value="\bid\b">Description needed</function>
+   	    <function value="\bfail\b">Description needed</function>
+        </functions>
+        
+        <operators color="7171510" style="bold">
+            <operator>=</operator>
+            <operator>!=</operator>
+            <operator>==</operator>
+            <operator>!==</operator>
+            <operator>&gt;</operator>
+            <operator>&lt;</operator>
+            <operator>&gt;=</operator>
+            <operator>&lt;=</operator>
+        </operators>
+        
+        <symbols color="7171510" style="bold">
+            <symbol>\(</symbol>
+            <symbol>\)</symbol>
+            <symbol>\[</symbol>
+            <symbol>\]</symbol>
+            <symbol>\{</symbol>
+            <symbol>\}</symbol>
+            <symbol>,</symbol>
+            <symbol>;</symbol>
+        </symbols>
+        
+        <singlecomments color="10066380" style="italic">
+            <singlecomment>//[^\n]*</singlecomment>
+        </singlecomments>
+
+        <multicomments color="10066380" style="italic">
+            <multicomment>/\*</multicomment>
+            <multicomment>\*/</multicomment>
+        </multicomments>
+
+        <quotations color="13408572" style="none">
+            <quotation>\&quot;*\&quot;</quotation>
+            <quotation>\&apos;.\&apos;</quotation>
+        </quotations>
+    </attributes>
+</script>
