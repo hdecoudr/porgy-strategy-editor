@@ -1,0 +1,9 @@
+QListView::item:selected:active{
+    background: #606060;
+    color: white;
+}
+
+QListView::item:selected:!active{
+    background: #B0B0B0;
+    color: black;
+}
