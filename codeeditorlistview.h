@@ -28,14 +28,14 @@ class CodeEditorListView : public QListView
     Q_OBJECT
 
 public:
-    CodeEditorListView(QWidget* parent = 0, int zoom = 0, QAbstractItemModel* model = 0);
+    CodeEditorListView(QWidget* parent = nullptr, int zoom = 0, QAbstractItemModel* model = nullptr);
     ~CodeEditorListView();
 
 protected:
-    void wheelEvent(QWheelEvent* event);
-    void dragEnterEvent(QDragEnterEvent* event);
-    void dropEvent(QDropEvent* event);
-    void dragMoveEvent(QDragMoveEvent* event);
+    void wheelEvent(QWheelEvent* event) override;
+    void dragEnterEvent(QDragEnterEvent* event) override;
+    void dropEvent(QDropEvent* event) override;
+    void dragMoveEvent(QDragMoveEvent* event) override;
 
 signals:
     void wheelZoomIn(int);
@@ -45,9 +45,9 @@ signals:
     void requestDropLoadSourceFiles(QStringList);
 
 private slots:
-    virtual void zoomIn(int);
-    virtual void zoomOut(int);
-    virtual void zoomRestore();
+    void zoomIn(int);
+    void zoomOut(int);
+    void zoomRestore();
 
 private:
     int defaultZoom;

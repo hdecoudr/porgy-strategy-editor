@@ -25,13 +25,15 @@
 #include <QMessageBox>
 #include <QMimeData>
 
+
 /****************************************************************************************
  ****************************************************************************************
  *
  * Default constructor.
  *
  ****************************************************************************************/
-CodeEditorListView::CodeEditorListView(QWidget* parent, int zoom, QAbstractItemModel* model) : QListView(parent)
+CodeEditorListView::CodeEditorListView(QWidget* parent, int zoom, QAbstractItemModel* model)
+    : QListView(parent)
 {
     QString name = ":/styles/code-editor/listview/items/listviewitems.qss";
     QFile f(name);
