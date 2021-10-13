@@ -72,7 +72,7 @@ private slots:
     void updateLineNumberAreaWidth(int);
     void highlightCurrentLine();
     void updateLineNumberArea(const QRect&, int);
-	void insertCompletion(const QString&);
+    void insertCompletion(const QString&);
 	
 private slots:
     void zoomIn(int);
