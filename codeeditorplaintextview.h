@@ -73,9 +73,9 @@ private slots:
 	void insertCompletion(const QString&);
 	
 private slots:
-    virtual void zoomIn(int);
-    virtual void zoomOut(int);
-    virtual void zoomRestore();
+    void zoomIn(int);
+    void zoomOut(int);
+    void zoomRestore();
 
 private:
     GeneralPurposeSyntaxHighlighter*    syntaxHighlighter;     
