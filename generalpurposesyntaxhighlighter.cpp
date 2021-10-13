@@ -47,7 +47,7 @@ GeneralPurposeSyntaxHighlighter::GeneralPurposeSyntaxHighlighter(const QString* 
 /****************************************************************************************
  ****************************************************************************************
  *
- * Default destructor
+ * Destructor
  *
  ****************************************************************************************/
 GeneralPurposeSyntaxHighlighter::~GeneralPurposeSyntaxHighlighter()
