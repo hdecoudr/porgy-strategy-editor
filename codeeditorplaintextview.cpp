@@ -106,7 +106,7 @@ CodeEditorPlainTextView::CodeEditorPlainTextView(QWidget* parent, int zoom, cons
  * Destructor.
  *
  ****************************************************************************************/
-CodeEditorPlainTextView::~CodeEditorPlainTextView(){}
+CodeEditorPlainTextView::~CodeEditorPlainTextView() {}
 
 /****************************************************************************************
  ****************************************************************************************
