@@ -25,13 +25,15 @@
 
 #include <QMessageBox>
 
+
 /****************************************************************************************
  ****************************************************************************************
  *
- * Default constructor.
+ * Constructor.
  *
  ****************************************************************************************/
-GeneralPurposeSyntaxHighlighter::GeneralPurposeSyntaxHighlighter(const QString* syntaxFile, QTextDocument* parent) : QSyntaxHighlighter(parent)
+GeneralPurposeSyntaxHighlighter::GeneralPurposeSyntaxHighlighter(const QString* syntaxFile, QTextDocument* parent)
+    : QSyntaxHighlighter(parent)
 {
     highlightingRules = new GeneralPurposeSyntaxHighlightingRules();
     QString err;
@@ -104,8 +106,8 @@ QString GeneralPurposeSyntaxHighlighter::getParseError() const
  ****************************************************************************************/
 void GeneralPurposeSyntaxHighlighter::highlightBlock(const QString& text)
 {
-    typedef std::map<std::string, std::vector<HighlightingRule*>>::iterator map_it;
-    typedef std::vector<HighlightingRule*>::iterator                        vec_it;
+    using map_it = std::map<std::string, std::vector<HighlightingRule*>>::iterator;
+    using vec_it = std::vector<HighlightingRule*>::iterator;
 
     for(map_it itM = highlightingRules->begin(); itM != highlightingRules->end(); ++itM)
     {    

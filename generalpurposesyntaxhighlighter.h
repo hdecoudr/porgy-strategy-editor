@@ -38,7 +38,7 @@ public:
     QString getParseError() const;
 
 protected:
-    void highlightBlock(const QString& text);
+    void highlightBlock(const QString& text) override;
 
 private:
    GeneralPurposeSyntaxHighlightingRules*   highlightingRules;
