@@ -96,7 +96,7 @@ CodeEditorPlainTextView::CodeEditorPlainTextView(QWidget* parent, int zoom, cons
     defaultZoom = font().pointSize() + zoom;
 
     QFontMetrics fMetrics(font());
-    setTabStopWidth(4 * fMetrics.width(' '));
+    setTabStopDistance(4 * fMetrics.width(' '));
 }
 
 /****************************************************************************************
