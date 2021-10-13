@@ -24,6 +24,7 @@
 #include "codeeditorview.h"
 
 #include <QDesktopWidget>
+#include <QScreen>
 
 
 /****************************************************************************************
@@ -64,7 +65,7 @@ MainWindow::~MainWindow()
  ****************************************************************************************/
 void MainWindow::setWindowSizeAndPos()
 {
-    QRect screenRect = QApplication::desktop()->screenGeometry();
+    QRect screenRect = QGuiApplication::primaryScreen()->geometry();
     int w = screenRect.width() / 2;
     int h = screenRect.height() / 2;
 
