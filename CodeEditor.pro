@@ -9,36 +9,35 @@ QT       += xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = CodeEditor
-TEMPLATE = app
+CONFIG += c++11
 
-QMAKE_CXXFLAGS += -std=c++11
+DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    codeeditorplaintextview.cpp \
-    codeeditorview.cpp \
-    codeeditorlistview.cpp \
-    sourcecode.cpp \
-    sourcecodemodel.cpp \
-    generalpurposesyntaxhighlighter.cpp \
-    xmlsyntaxparser.cpp \
-    generalpurposesyntaxhighlightingrules.cpp \
-    highlightingrule.cpp
+           mainwindow.cpp \
+           codeeditorplaintextview.cpp \
+           codeeditorview.cpp \
+           codeeditorlistview.cpp \
+           sourcecode.cpp \
+           sourcecodemodel.cpp \
+           generalpurposesyntaxhighlighter.cpp \
+           xmlsyntaxparser.cpp \
+           generalpurposesyntaxhighlightingrules.cpp \
+           highlightingrule.cpp
 
 HEADERS  += mainwindow.h \
-    codeeditorplaintextview.h \
-    codeeditorview.h \
-    codeeditorlistview.h \
-    sourcecode.h \
-    sourcecodemodel.h \
-    generalpurposesyntaxhighlighter.h \
-    xmlsyntaxparser.h \
-    generalpurposesyntaxhighlightingrules.h \
-    highlightingrule.h
+            codeeditorplaintextview.h \
+            codeeditorview.h \
+            codeeditorlistview.h \
+            sourcecode.h \
+            sourcecodemodel.h \
+            generalpurposesyntaxhighlighter.h \
+            xmlsyntaxparser.h \
+            generalpurposesyntaxhighlightingrules.h \
+            highlightingrule.h
 
 FORMS    += mainwindow.ui \
-    codeeditorview.ui
+            codeeditorview.ui
 
 RESOURCES += \
     code-editor-icons.qrc \
