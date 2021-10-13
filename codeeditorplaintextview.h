@@ -38,17 +38,17 @@ class CodeEditorPlainTextView : public QPlainTextEdit
         ~LineNumberArea();
 
 	public:
-        QSize sizeHint() const;
+        QSize sizeHint() const override;
 
     protected:
-        void paintEvent(QPaintEvent* event);
+        void paintEvent(QPaintEvent* event) override;
 
     private:
         CodeEditorPlainTextView* codeEditor;
     };
 
 public:
-    CodeEditorPlainTextView(QWidget* parent = 0, int zoom = 0, const QString* syntaxFile = 0);
+    CodeEditorPlainTextView(QWidget* parent = nullptr, int zoom = 0, const QString* syntaxFile = nullptr);
     ~CodeEditorPlainTextView();
 
 public:
@@ -56,11 +56,13 @@ public:
     int lineNumberAreaWidth();
 
 protected:
-    void resizeEvent(QResizeEvent* event);
-    void wheelEvent(QWheelEvent* event);
     void initConnections();
-    void keyPressEvent(QKeyEvent* e);
-    void focusInEvent(QFocusEvent* e);
+
+protected:
+    void resizeEvent(QResizeEvent* event) override;
+    void wheelEvent(QWheelEvent* event) override;
+    void keyPressEvent(QKeyEvent* e) override;
+    void focusInEvent(QFocusEvent* e) override;
 
 signals:
     void wheelZoomIn(int);
@@ -78,6 +80,9 @@ private slots:
     void zoomRestore();
 
 private:
+    QString textUnderCursor() const;
+
+private:
     GeneralPurposeSyntaxHighlighter*    syntaxHighlighter;     
 
 private:
@@ -87,9 +92,6 @@ private:
 
 private:
     int                                 defaultZoom;         
-
-private:
-    QString textUnderCursor() const;
 };
 
 #endif // CODEEDITORPLAINTEXTVIEW_H

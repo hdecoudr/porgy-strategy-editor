@@ -39,7 +39,8 @@
  * Constructor.
  *
  ****************************************************************************************/
-CodeEditorPlainTextView::CodeEditorPlainTextView(QWidget* parent, int zoom, const QString* syntaxFile) : QPlainTextEdit(parent), syntaxHighlighter(nullptr), syntaxCompleter(nullptr)
+CodeEditorPlainTextView::CodeEditorPlainTextView(QWidget* parent, int zoom, const QString* syntaxFile)
+    : QPlainTextEdit(parent), syntaxHighlighter(nullptr), syntaxCompleter(nullptr)
 {
     lineNumberArea = new LineNumberArea(this);
 
@@ -206,7 +207,7 @@ void CodeEditorPlainTextView::wheelEvent(QWheelEvent* event)
 void CodeEditorPlainTextView::initConnections()
 {
     connect(this, SIGNAL(blockCountChanged(int)), this, SLOT(updateLineNumberAreaWidth(int)));
-    connect(this, SIGNAL(updateRequest(QRect, int)), this, SLOT(updateLineNumberArea(QRect, int)));
+    connect(this, SIGNAL(updateRequest(QRect,int)), this, SLOT(updateLineNumberArea(QRect,int)));
     connect(this, SIGNAL(cursorPositionChanged()), this, SLOT(highlightCurrentLine()));
 
     if(syntaxCompleter)
@@ -332,7 +333,7 @@ void CodeEditorPlainTextView::highlightCurrentLine()
         extraSelections.append(selection);
     }
 
-    this->setExtraSelections(extraSelections);
+    setExtraSelections(extraSelections);
 }
 
 /****************************************************************************************
@@ -444,7 +445,8 @@ QString CodeEditorPlainTextView::textUnderCursor() const
  * Constructor.
  *
  ****************************************************************************************/
-CodeEditorPlainTextView::LineNumberArea::LineNumberArea(CodeEditorPlainTextView* parent) : QWidget(parent), codeEditor(parent) {}
+CodeEditorPlainTextView::LineNumberArea::LineNumberArea(CodeEditorPlainTextView* parent) :
+    QWidget(parent), codeEditor(parent) {}
 
 /****************************************************************************************
  ****************************************************************************************
