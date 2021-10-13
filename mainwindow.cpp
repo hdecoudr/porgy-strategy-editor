@@ -23,7 +23,6 @@
 
 #include "codeeditorview.h"
 
-#include <QDesktopWidget>
 #include <QScreen>
 
 
