@@ -53,7 +53,7 @@ class CodeEditorView : public QWidget
     Q_OBJECT
 
 public:
-    explicit CodeEditorView(SourceCodeModel* model, const QString* syntaxFile = 0, QWidget* parent = 0);
+    explicit CodeEditorView(SourceCodeModel* model, const QString* syntaxFile = nullptr, QWidget* parent = nullptr);
     ~CodeEditorView();
 
 public:
@@ -89,6 +89,12 @@ private slots:
     void duplicateSourceCode();
     void selectedSourceCodeChanged(const QModelIndex& current, const QModelIndex& previous);
     void deleteSourceCode();
+
+private:
+    void initToolBar();
+    void initToolBarButtons();
+    void initConnections();
+    void displaySourceCode(int modelIndex);
 
 private:
     Ui::CodeEditor* ui;                         
@@ -137,12 +143,6 @@ private:
 private:
     CodeEditorListView* codeEditorListView;
     CodeEditorPlainTextView* codeEditorPlainTextView;
-
-private:
-    void initToolBar();
-    void initToolBarButtons();
-    void initConnections();
-    void displaySourceCode(int modelIndex);
 };
 
 #endif // CODEEDITORVIEW_H
