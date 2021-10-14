@@ -23,7 +23,7 @@
 
 #include <QSyntaxHighlighter>
 
-class GeneralPurposeSyntaxHighlightingRules;
+#include <generalpurposesyntaxhighlightingrules.h>
 
 class GeneralPurposeSyntaxHighlighter : public QSyntaxHighlighter
 {
@@ -33,7 +33,7 @@ public:
     GeneralPurposeSyntaxHighlighter(const QString* syntaxFile, QTextDocument* parent);
     ~GeneralPurposeSyntaxHighlighter();
 
- public:
+public:
     QStringList getKeywords();
     QString getParseError() const;
 
@@ -41,7 +41,7 @@ protected:
     void highlightBlock(const QString& text) override;
 
 private:
-   GeneralPurposeSyntaxHighlightingRules*   highlightingRules;
+   GeneralPurposeSyntaxHighlightingRules    highlightingRules;
    QString                                  error;
 };
 

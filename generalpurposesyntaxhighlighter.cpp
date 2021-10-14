@@ -35,7 +35,6 @@
 GeneralPurposeSyntaxHighlighter::GeneralPurposeSyntaxHighlighter(const QString* syntaxFile, QTextDocument* parent)
     : QSyntaxHighlighter(parent)
 {
-    highlightingRules = new GeneralPurposeSyntaxHighlightingRules();
     QString err;
 
     if(!XmlSyntaxParser::parse(*syntaxFile, highlightingRules, &err))
@@ -50,10 +49,7 @@ GeneralPurposeSyntaxHighlighter::GeneralPurposeSyntaxHighlighter(const QString* 
  * Destructor
  *
  ****************************************************************************************/
-GeneralPurposeSyntaxHighlighter::~GeneralPurposeSyntaxHighlighter()
-{
-    delete highlightingRules;
-}
+GeneralPurposeSyntaxHighlighter::~GeneralPurposeSyntaxHighlighter() {}
 
 /****************************************************************************************
  ****************************************************************************************
@@ -65,7 +61,7 @@ GeneralPurposeSyntaxHighlighter::~GeneralPurposeSyntaxHighlighter()
 QStringList GeneralPurposeSyntaxHighlighter::getKeywords()
 {
     QStringList keywords;
-    std::vector<HighlightingRule> vec = (*highlightingRules)("instruction");
+    std::vector<HighlightingRule> vec = highlightingRules("instruction");
 
     for(std::size_t i = 0; i < vec.size(); ++i)
     {
@@ -74,7 +70,7 @@ QStringList GeneralPurposeSyntaxHighlighter::getKeywords()
         keywords << str;
     }
 
-    vec = (*highlightingRules)("function");
+    vec = highlightingRules("function");
 
     for(std::size_t i = 0; i < vec.size(); ++i)
     {
@@ -109,7 +105,7 @@ void GeneralPurposeSyntaxHighlighter::highlightBlock(const QString& text)
     using map_it = std::map<std::string, std::vector<HighlightingRule>>::iterator;
     using vec_it = std::vector<HighlightingRule>::iterator;
 
-    for(map_it itM = highlightingRules->begin(); itM != highlightingRules->end(); ++itM)
+    for(map_it itM = highlightingRules.begin(); itM != highlightingRules.end(); ++itM)
     {    
         for(vec_it itV = itM->second.begin(); itV != itM->second.end(); ++itV)
         {
@@ -127,7 +123,7 @@ void GeneralPurposeSyntaxHighlighter::highlightBlock(const QString& text)
 
     setCurrentBlockState(0);
 
-    std::vector<HighlightingRule> vec = (*highlightingRules)("multicomment");
+    std::vector<HighlightingRule> vec = highlightingRules("multicomment");
 
     int startIndex = 0;
 
