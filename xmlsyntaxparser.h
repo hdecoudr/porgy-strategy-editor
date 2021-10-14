@@ -30,7 +30,7 @@ class GeneralPurposeSyntaxHighlightingRules;
 class XmlSyntaxParser
 {
 public:
-    static bool parse(const QString& file, GeneralPurposeSyntaxHighlightingRules* rules, QString* error = 0);
+    static bool parse(const QString& file, GeneralPurposeSyntaxHighlightingRules& rules, QString* error = 0);
 
 public:
     inline static QBrush intToRgb(int color)

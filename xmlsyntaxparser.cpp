@@ -25,7 +25,7 @@
 #include <QFile>
 #include <QXmlStreamReader>
 
-bool XmlSyntaxParser::parse(const QString& file, GeneralPurposeSyntaxHighlightingRules* rules, QString* error)
+bool XmlSyntaxParser::parse(const QString& file, GeneralPurposeSyntaxHighlightingRules& rules, QString* error)
 {
     QFile f(file);
 
@@ -170,12 +170,12 @@ bool XmlSyntaxParser::parse(const QString& file, GeneralPurposeSyntaxHighlightin
                                     if(element == "function")
                                     {
                                         QRegExp rExp(reader.attributes().at(0).value().toString());
-                                        rules->appendRule(element.toUtf8().constData(), HighlightingRule(rExp, cFormat));
+                                        rules.appendRule(element.toUtf8().constData(), HighlightingRule(rExp, cFormat));
                                     }
                                     else
                                     {
                                         QRegExp rExp(reader.readElementText());
-                                        rules->appendRule(element.toUtf8().constData(), HighlightingRule(rExp, cFormat));
+                                        rules.appendRule(element.toUtf8().constData(), HighlightingRule(rExp, cFormat));
                                     }
                                 }
                                 else
