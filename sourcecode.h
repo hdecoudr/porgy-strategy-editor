@@ -23,6 +23,7 @@
 
 #include <QString>
 
+
 class SourceCode
 {
 public:
@@ -66,5 +67,6 @@ private:
     QString name;   
     QString code;    
 };
+
 
 #endif // SOURCECODE_H

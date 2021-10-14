@@ -20,10 +20,11 @@
 
 #include "highlightingrule.h"
 
+
 /****************************************************************************************
  ****************************************************************************************
  *
- * Default constructor.
+ * Constructor.
  *
  ****************************************************************************************/
 HighlightingRule::HighlightingRule() {}
@@ -31,15 +32,16 @@ HighlightingRule::HighlightingRule() {}
 /****************************************************************************************
  ****************************************************************************************
  *
- * Default constructor.
+ * Constructor.
  *
  ****************************************************************************************/
-HighlightingRule::HighlightingRule(const QRegExp& pattern, const QTextCharFormat& format) : pattern(pattern), format(format) {}
+HighlightingRule::HighlightingRule(const QRegExp& pattern, const QTextCharFormat& format)
+    : pattern(pattern), format(format) {}
 
 /****************************************************************************************
  ****************************************************************************************
  *
- * Default destructor.
+ * Destructor.
  *
  ****************************************************************************************/
 HighlightingRule::~HighlightingRule() {}

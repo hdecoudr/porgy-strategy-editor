@@ -21,13 +21,14 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-
 #include "sourcecodemodel.h"
+
+#include <QMainWindow>
 
 namespace Ui {
 class MainWindow;
 }
+
 
 class MainWindow : public QMainWindow
 {
@@ -44,5 +45,6 @@ private:
     SourceCodeModel model;
     Ui::MainWindow* ui;
 };
+
 
 #endif // MAINWINDOW_H

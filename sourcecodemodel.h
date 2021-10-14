@@ -29,6 +29,7 @@
 #include <QAbstractListModel>
 #include <QTextDocument>
 
+
 class SourceCodeModel : public QAbstractListModel
 {
 public:
@@ -72,5 +73,6 @@ public:
 private:
     QVector<std::pair<QString, QTextDocument*>> sourceCodes;
 };
+
 
 #endif // SOURCECODEMODEL_H

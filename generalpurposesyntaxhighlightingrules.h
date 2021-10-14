@@ -26,6 +26,7 @@
 
 class HighlightingRule;
 
+
 class GeneralPurposeSyntaxHighlightingRules
 {
 public:
@@ -50,5 +51,6 @@ public:
 private:
     std::map<std::string, std::vector<HighlightingRule>> highlightingRules;
 };
+
 
 #endif // GENERALPURPOSESYNTAXHIGHLIGHTINGRULES_H

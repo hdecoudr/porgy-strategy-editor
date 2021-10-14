@@ -27,6 +27,7 @@ class GeneralPurposeSyntaxHighlighter;
 class QAbstractListModel;
 class QCompleter;
 
+
 class CodeEditorPlainTextView : public QPlainTextEdit
 {
     Q_OBJECT
@@ -93,5 +94,6 @@ private:
 private:
     int                                 defaultZoom;         
 };
+
 
 #endif // CODEEDITORPLAINTEXTVIEW_H

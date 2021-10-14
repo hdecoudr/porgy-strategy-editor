@@ -40,6 +40,7 @@ namespace Ui {
 class CodeEditor;
 }
 
+
 enum WidgetPosition
 {
     WIDGET_POSITION_TOP = 0,    
@@ -47,6 +48,7 @@ enum WidgetPosition
     WIDGET_POSITION_LEFT,       
     WIDGET_POSITION_RIGHT       
 };
+
 
 class CodeEditorView : public QWidget
 {
@@ -144,5 +146,6 @@ private:
     CodeEditorListView* codeEditorListView;
     CodeEditorPlainTextView* codeEditorPlainTextView;
 };
+
 
 #endif // CODEEDITORVIEW_H

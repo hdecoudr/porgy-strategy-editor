@@ -23,6 +23,7 @@
 
 #include <QListView>
 
+
 class CodeEditorListView : public QListView
 {
     Q_OBJECT
@@ -52,5 +53,6 @@ private slots:
 private:
     int defaultZoom;
 };
+
 
 #endif // CODEEDITORLISTVIEW_H

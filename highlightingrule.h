@@ -23,6 +23,7 @@
 
 #include <QTextCharFormat>
 
+
 class HighlightingRule
 {
 public:
@@ -41,5 +42,6 @@ private:
     QRegExp         pattern;   
     QTextCharFormat format;   
 };
+
 
 #endif // HIGHLIGHTINGRULE_H

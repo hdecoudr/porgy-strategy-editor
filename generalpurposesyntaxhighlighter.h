@@ -21,9 +21,10 @@
 #ifndef GENERALPURPOSESYNTAXHIGHLIGHTER_H
 #define GENERALPURPOSESYNTAXHIGHLIGHTER_H
 
+#include <generalpurposesyntaxhighlightingrules.h>
+
 #include <QSyntaxHighlighter>
 
-#include <generalpurposesyntaxhighlightingrules.h>
 
 class GeneralPurposeSyntaxHighlighter : public QSyntaxHighlighter
 {
@@ -44,5 +45,6 @@ private:
    GeneralPurposeSyntaxHighlightingRules    highlightingRules;
    QString                                  error;
 };
+
 
 #endif // GENERALPURPOSESYNTAXHIGHLIGHTER_H

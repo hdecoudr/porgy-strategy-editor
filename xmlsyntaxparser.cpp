@@ -25,6 +25,7 @@
 #include <QFile>
 #include <QXmlStreamReader>
 
+
 bool XmlSyntaxParser::parse(const QString& file, GeneralPurposeSyntaxHighlightingRules& rules, QString* error)
 {
     QFile f(file);
