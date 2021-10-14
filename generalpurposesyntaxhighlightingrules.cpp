@@ -116,37 +116,10 @@ std::vector<HighlightingRule> GeneralPurposeSyntaxHighlightingRules::operator ()
 /****************************************************************************************
  ****************************************************************************************
  *
- * Get a vector of rules.
- *
- ****************************************************************************************/
-std::vector<HighlightingRule> GeneralPurposeSyntaxHighlightingRules::operator ()(const char* key) const
-{
-    if(highlightingRules.find(key) == highlightingRules.end())
-    {
-        return std::vector<HighlightingRule>();
-    }
-
-    return highlightingRules.at(key);
-}
-
-/****************************************************************************************
- ****************************************************************************************
- *
  * Set a rule.
  *
  ****************************************************************************************/
 std::vector<HighlightingRule>& GeneralPurposeSyntaxHighlightingRules::operator ()(const std::string& key)
-{
-    return highlightingRules[key];
-}
-
-/****************************************************************************************
- ****************************************************************************************
- *
- * Set a rule.
- *
- ****************************************************************************************/
-std::vector<HighlightingRule>& GeneralPurposeSyntaxHighlightingRules::operator ()(const char* key)
 {
     return highlightingRules[key];
 }
