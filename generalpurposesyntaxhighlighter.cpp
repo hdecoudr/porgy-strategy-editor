@@ -65,7 +65,7 @@ GeneralPurposeSyntaxHighlighter::~GeneralPurposeSyntaxHighlighter()
 QStringList GeneralPurposeSyntaxHighlighter::getKeywords()
 {
     QStringList keywords;
-    std::vector<HighlightingRule> vec = (*highlightingRules)["instruction"];
+    std::vector<HighlightingRule> vec = (*highlightingRules)("instruction");
 
     for(std::size_t i = 0; i < vec.size(); ++i)
     {
@@ -74,7 +74,7 @@ QStringList GeneralPurposeSyntaxHighlighter::getKeywords()
         keywords << str;
     }
 
-    vec = (*highlightingRules)["function"];
+    vec = (*highlightingRules)("function");
 
     for(std::size_t i = 0; i < vec.size(); ++i)
     {
@@ -127,7 +127,7 @@ void GeneralPurposeSyntaxHighlighter::highlightBlock(const QString& text)
 
     setCurrentBlockState(0);
 
-    std::vector<HighlightingRule> vec = (*highlightingRules)["multicomment"];
+    std::vector<HighlightingRule> vec = (*highlightingRules)("multicomment");
 
     int startIndex = 0;
 

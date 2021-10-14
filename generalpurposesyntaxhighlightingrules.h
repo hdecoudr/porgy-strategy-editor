@@ -44,10 +44,10 @@ public:
     std::size_t size(const std::string& key) const;
 
 public:
-    std::vector<HighlightingRule> operator [](const std::string& key) const;
-    std::vector<HighlightingRule> operator [](const char* key) const;
-    std::vector<HighlightingRule>& operator [](const std::string& key);
-    std::vector<HighlightingRule>& operator [](const char* key);
+    std::vector<HighlightingRule> operator ()(const std::string& key) const;
+    std::vector<HighlightingRule> operator ()(const char* key) const;
+    std::vector<HighlightingRule>& operator ()(const std::string& key);
+    std::vector<HighlightingRule>& operator ()(const char* key);
 
 private:
     std::map<std::string, std::vector<HighlightingRule>> highlightingRules;
