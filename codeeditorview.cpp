@@ -42,7 +42,8 @@
  * Constructor.
  *
  ****************************************************************************************/
-CodeEditorView::CodeEditorView(SourceCodeModel* model, const QString* syntaxFile, QWidget* parent) : QWidget(parent), ui(new Ui::CodeEditor), deleteLast(false), sourceCodeModel(model)
+CodeEditorView::CodeEditorView(SourceCodeModel* model, const QString* syntaxFile, QWidget* parent)
+    : QWidget(parent), ui(new Ui::CodeEditor), deleteLast(false), sourceCodeModel(model)
 {
     ui->setupUi(this);
 
@@ -434,7 +435,7 @@ void CodeEditorView::initConnections()
         connect(actionOpenAll, SIGNAL(triggered(bool)), this, SLOT(openAll()));
         connect(codeEditorListView, SIGNAL(requestDropLoadSourceFiles(QStringList)), this, SLOT(openDrop(QStringList)));
 
-        connect(codeEditorListView->selectionModel(), SIGNAL(currentChanged(const QModelIndex&, const QModelIndex&)), this, SLOT(selectedSourceCodeChanged(const QModelIndex&, const QModelIndex&)));
+        connect(codeEditorListView->selectionModel(), SIGNAL(currentChanged(QModelIndex,QModelIndex)), this, SLOT(selectedSourceCodeChanged(QModelIndex,QModelIndex)));
     }
     else
     {
