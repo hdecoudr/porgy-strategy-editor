@@ -170,14 +170,12 @@ bool XmlSyntaxParser::parse(const QString& file, GeneralPurposeSyntaxHighlightin
                                     if(element == "function")
                                     {
                                         QRegExp rExp(reader.attributes().at(0).value().toString());
-                                        HighlightingRule* hRule = new HighlightingRule(rExp, cFormat);
-                                        rules->appendRule(element.toUtf8().constData(), hRule);
+                                        rules->appendRule(element.toUtf8().constData(), HighlightingRule(rExp, cFormat));
                                     }
                                     else
                                     {
                                         QRegExp rExp(reader.readElementText());
-                                        HighlightingRule* hRule = new HighlightingRule(rExp, cFormat);
-                                        rules->appendRule(element.toUtf8().constData(), hRule);
+                                        rules->appendRule(element.toUtf8().constData(), HighlightingRule(rExp, cFormat));
                                     }
                                 }
                                 else

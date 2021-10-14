@@ -33,24 +33,24 @@ public:
     ~GeneralPurposeSyntaxHighlightingRules();
 
 public:
-    void appendRule(const std::string& key, HighlightingRule* rule);
+    void appendRule(const std::string& key, const HighlightingRule& rule);
     
 public:
-	std::map<std::string, std::vector<HighlightingRule*>>::iterator begin();
-    std::map<std::string, std::vector<HighlightingRule*>>::iterator end();
+    std::map<std::string, std::vector<HighlightingRule>>::iterator begin();
+    std::map<std::string, std::vector<HighlightingRule>>::iterator end();
 
 public:
     std::size_t size() const;
     std::size_t size(const std::string& key) const;
 
 public:
-    std::vector<HighlightingRule*> operator [](const std::string& key) const;
-    std::vector<HighlightingRule*> operator [](const char* key) const;
-    std::vector<HighlightingRule*>& operator [](const std::string& key);
-    std::vector<HighlightingRule*>& operator [](const char* key);
+    std::vector<HighlightingRule> operator [](const std::string& key) const;
+    std::vector<HighlightingRule> operator [](const char* key) const;
+    std::vector<HighlightingRule>& operator [](const std::string& key);
+    std::vector<HighlightingRule>& operator [](const char* key);
 
 private:
-    std::map<std::string, std::vector<HighlightingRule*>> highlightingRules;
+    std::map<std::string, std::vector<HighlightingRule>> highlightingRules;
 };
 
 #endif // GENERALPURPOSESYNTAXHIGHLIGHTINGRULES_H

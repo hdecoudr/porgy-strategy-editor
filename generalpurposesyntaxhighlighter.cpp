@@ -65,11 +65,11 @@ GeneralPurposeSyntaxHighlighter::~GeneralPurposeSyntaxHighlighter()
 QStringList GeneralPurposeSyntaxHighlighter::getKeywords()
 {
     QStringList keywords;
-    std::vector<HighlightingRule*> vec = (*highlightingRules)["instruction"];
+    std::vector<HighlightingRule> vec = (*highlightingRules)["instruction"];
 
     for(std::size_t i = 0; i < vec.size(); ++i)
     {
-        QString str = vec.at(i)->toString();
+        QString str = vec.at(i).toString();
         XmlSyntaxParser::removeWordBoundary(str);
         keywords << str;
     }
@@ -78,7 +78,7 @@ QStringList GeneralPurposeSyntaxHighlighter::getKeywords()
 
     for(std::size_t i = 0; i < vec.size(); ++i)
     {
-        QString str = vec.at(i)->toString();
+        QString str = vec.at(i).toString();
         XmlSyntaxParser::removeWordBoundary(str);
         keywords << str;
     }
@@ -106,20 +106,20 @@ QString GeneralPurposeSyntaxHighlighter::getParseError() const
  ****************************************************************************************/
 void GeneralPurposeSyntaxHighlighter::highlightBlock(const QString& text)
 {
-    using map_it = std::map<std::string, std::vector<HighlightingRule*>>::iterator;
-    using vec_it = std::vector<HighlightingRule*>::iterator;
+    using map_it = std::map<std::string, std::vector<HighlightingRule>>::iterator;
+    using vec_it = std::vector<HighlightingRule>::iterator;
 
     for(map_it itM = highlightingRules->begin(); itM != highlightingRules->end(); ++itM)
     {    
         for(vec_it itV = itM->second.begin(); itV != itM->second.end(); ++itV)
         {
-            QRegExp expression((*itV)->getPattern());
+            QRegExp expression(itV->getPattern());
             int index = expression.indexIn(text);
 
             while(index >= 0)
             {
                 int length = expression.matchedLength();
-                setFormat(index, length, (*itV)->getFormat());
+                setFormat(index, length, itV->getFormat());
                 index = expression.indexIn(text, index + length);
             }
         }
@@ -127,18 +127,18 @@ void GeneralPurposeSyntaxHighlighter::highlightBlock(const QString& text)
 
     setCurrentBlockState(0);
 
-    std::vector<HighlightingRule*> vec = (*highlightingRules)["multicomment"];
+    std::vector<HighlightingRule> vec = (*highlightingRules)["multicomment"];
 
     int startIndex = 0;
 
     if (previousBlockState() != 1)
     {
-        startIndex = vec.at(0)->getPattern().indexIn(text);
+        startIndex = vec.at(0).getPattern().indexIn(text);
     }
 
     while (startIndex >= 0)
     {
-        int endIndex = vec.at(1)->getPattern().indexIn(text, startIndex);
+        int endIndex = vec.at(1).getPattern().indexIn(text, startIndex);
         int commentLength;
 
         if(endIndex == -1)
@@ -148,10 +148,10 @@ void GeneralPurposeSyntaxHighlighter::highlightBlock(const QString& text)
         }
         else
         {
-            commentLength = endIndex - startIndex + vec.at(1)->getPattern().matchedLength();
+            commentLength = endIndex - startIndex + vec.at(1).getPattern().matchedLength();
         }
 
-        setFormat(startIndex, commentLength, vec.at(0)->getFormat());
-        startIndex = vec.at(0)->getPattern().indexIn(text, startIndex + commentLength);
+        setFormat(startIndex, commentLength, vec.at(0).getFormat());
+        startIndex = vec.at(0).getPattern().indexIn(text, startIndex + commentLength);
     }
 }

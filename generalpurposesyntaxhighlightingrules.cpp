@@ -35,19 +35,7 @@ GeneralPurposeSyntaxHighlightingRules::GeneralPurposeSyntaxHighlightingRules() {
  * Destructor.
  *
  ****************************************************************************************/
-GeneralPurposeSyntaxHighlightingRules::~GeneralPurposeSyntaxHighlightingRules()
-{
-    typedef std::map<std::string, std::vector<HighlightingRule*>>::iterator     map_it;
-    typedef std::vector<HighlightingRule*>::iterator                            vec_it;
-
-    for(map_it itM = highlightingRules.begin(); itM != highlightingRules.end(); ++itM)
-    {
-        for(vec_it itV = itM->second.begin(); itV != itM->second.end(); ++itV)
-        {
-            delete *itV;
-        }
-    }
-}
+GeneralPurposeSyntaxHighlightingRules::~GeneralPurposeSyntaxHighlightingRules() {}
 
 /****************************************************************************************
  ****************************************************************************************
@@ -55,7 +43,7 @@ GeneralPurposeSyntaxHighlightingRules::~GeneralPurposeSyntaxHighlightingRules()
  * Add rule.
  *
  ****************************************************************************************/
-void GeneralPurposeSyntaxHighlightingRules::appendRule(const std::string& key, HighlightingRule* rule)
+void GeneralPurposeSyntaxHighlightingRules::appendRule(const std::string& key, const HighlightingRule& rule)
 {
     highlightingRules[key].push_back(rule);
 }
@@ -66,7 +54,7 @@ void GeneralPurposeSyntaxHighlightingRules::appendRule(const std::string& key, H
  * Get map begin.
  *
  ****************************************************************************************/
-std::map<std::string, std::vector<HighlightingRule*>>::iterator GeneralPurposeSyntaxHighlightingRules::begin()
+std::map<std::string, std::vector<HighlightingRule>>::iterator GeneralPurposeSyntaxHighlightingRules::begin()
 {
     return highlightingRules.begin();
 }
@@ -77,7 +65,7 @@ std::map<std::string, std::vector<HighlightingRule*>>::iterator GeneralPurposeSy
  * Get map end.
  *
  ****************************************************************************************/
-std::map<std::string, std::vector<HighlightingRule*>>::iterator GeneralPurposeSyntaxHighlightingRules::end()
+std::map<std::string, std::vector<HighlightingRule>>::iterator GeneralPurposeSyntaxHighlightingRules::end()
 {
     return highlightingRules.end();
 }
@@ -115,11 +103,11 @@ std::size_t GeneralPurposeSyntaxHighlightingRules::size(const std::string& key) 
  * Get a vector of rules.
  *
  ****************************************************************************************/
-std::vector<HighlightingRule*> GeneralPurposeSyntaxHighlightingRules::operator [](const std::string& key) const
+std::vector<HighlightingRule> GeneralPurposeSyntaxHighlightingRules::operator [](const std::string& key) const
 {
     if(highlightingRules.find(key) == highlightingRules.end())
     {
-        return std::vector<HighlightingRule*>();
+        return std::vector<HighlightingRule>();
     }
 
     return highlightingRules.at(key);
@@ -131,11 +119,11 @@ std::vector<HighlightingRule*> GeneralPurposeSyntaxHighlightingRules::operator [
  * Get a vector of rules.
  *
  ****************************************************************************************/
-std::vector<HighlightingRule*> GeneralPurposeSyntaxHighlightingRules::operator [](const char* key) const
+std::vector<HighlightingRule> GeneralPurposeSyntaxHighlightingRules::operator [](const char* key) const
 {
     if(highlightingRules.find(key) == highlightingRules.end())
     {
-        return std::vector<HighlightingRule*>();
+        return std::vector<HighlightingRule>();
     }
 
     return highlightingRules.at(key);
@@ -147,7 +135,7 @@ std::vector<HighlightingRule*> GeneralPurposeSyntaxHighlightingRules::operator [
  * Set a rule.
  *
  ****************************************************************************************/
-std::vector<HighlightingRule*>& GeneralPurposeSyntaxHighlightingRules::operator [](const std::string& key)
+std::vector<HighlightingRule>& GeneralPurposeSyntaxHighlightingRules::operator [](const std::string& key)
 {
     return highlightingRules[key];
 }
@@ -158,7 +146,7 @@ std::vector<HighlightingRule*>& GeneralPurposeSyntaxHighlightingRules::operator 
  * Set a rule.
  *
  ****************************************************************************************/
-std::vector<HighlightingRule*>& GeneralPurposeSyntaxHighlightingRules::operator [](const char* key)
+std::vector<HighlightingRule>& GeneralPurposeSyntaxHighlightingRules::operator [](const char* key)
 {
     return highlightingRules[key];
 }
