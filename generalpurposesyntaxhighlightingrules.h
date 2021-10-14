@@ -44,10 +44,6 @@ public:
     std::size_t size(const std::string& key) const;
 
 public:
-    std::vector<HighlightingRule*> getRules(const std::string& key) const;
-    std::vector<HighlightingRule*>* getRules_Ptr(const std::string& key);
-
-public:
     std::vector<HighlightingRule*> operator [](const std::string& key) const;
     std::vector<HighlightingRule*> operator [](const char* key) const;
     std::vector<HighlightingRule*>& operator [](const std::string& key);

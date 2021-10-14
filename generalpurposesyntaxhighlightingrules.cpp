@@ -24,7 +24,7 @@
 /****************************************************************************************
  ****************************************************************************************
  *
- * Default constructor.
+ * Constructor.
  *
  ****************************************************************************************/
 GeneralPurposeSyntaxHighlightingRules::GeneralPurposeSyntaxHighlightingRules() {}
@@ -32,7 +32,7 @@ GeneralPurposeSyntaxHighlightingRules::GeneralPurposeSyntaxHighlightingRules() {
 /****************************************************************************************
  ****************************************************************************************
  *
- * Default destructor.
+ * Destructor.
  *
  ****************************************************************************************/
 GeneralPurposeSyntaxHighlightingRules::~GeneralPurposeSyntaxHighlightingRules()
@@ -107,38 +107,6 @@ std::size_t GeneralPurposeSyntaxHighlightingRules::size(const std::string& key) 
     }
 
     return highlightingRules.at(key).size();
-}
-
-/****************************************************************************************
- ****************************************************************************************
- *
- * Get a vector of rules.
- *
- ****************************************************************************************/
-std::vector<HighlightingRule*> GeneralPurposeSyntaxHighlightingRules::getRules(const std::string& key) const
-{
-    if(highlightingRules.find(key) == highlightingRules.end())
-    {
-        return std::vector<HighlightingRule*>();
-    }
-
-    return highlightingRules.at(key);
-}
-
-/****************************************************************************************
- ****************************************************************************************
- *
- * Get a pointer over a vector of rules.
- *
- ****************************************************************************************/
-std::vector<HighlightingRule*>* GeneralPurposeSyntaxHighlightingRules::getRules_Ptr(const std::string& key)
-{
-    if(highlightingRules.empty())
-    {
-        return nullptr;
-    }
-
-    return &highlightingRules.at(key);
 }
 
 /****************************************************************************************
